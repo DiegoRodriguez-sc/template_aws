@@ -1,0 +1,35 @@
+{
+  "name": "auth_sso",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build index.ts -o dist",
+    "zip": "cd dist/ && bestzip ../dist.zip * && cd ../",
+    "deploy": "npm run build && npm run zip && aws lambda update-function-code --function-name QRDOCCL01001-MS_generateQR_dev --zip-file fileb://dist.zip --region us-east-1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.131",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^20.11.4",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "@vercel/ncc": "^0.38.1",
+    "bestzip": "^2.2.1",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "zip": "^1.2.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1542.0",
+    "crypto": "^1.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.3.3",
+    "mssql": "^10.0.2",
+    "qrcode": "^1.5.3",
+    "typeorm": "^0.3.19"
+  }
+}
