@@ -6,7 +6,7 @@
   "scripts": {
     "build": "ncc build index.ts -o dist",
     "zip": "cd dist/ && bestzip ../dist.zip * && cd ../",
-    "deploy": "npm run build && npm run zip && aws lambda update-function-code --function-name QRDOCCL01001-MS_generateQR_dev --zip-file fileb://dist.zip --region us-east-1"
+    "deploy": "npm run build && npm run zip && aws lambda update-function-code --function-name carpetagithub_lambda --zip-file fileb://dist.zip --region us-east-1"
   },
   "keywords": [],
   "author": "",
